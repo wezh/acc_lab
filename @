@@ -1,0 +1,8 @@
+from celery import Celery
+from tweets import count_tweets
+
+app = Celery('taskrunner', backend='rpc://', broker='pyamqp://')
+
+@app.task
+def tweets_count(filename):
+    return count_tweets(filename)
