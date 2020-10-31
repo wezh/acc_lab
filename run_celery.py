@@ -17,7 +17,7 @@ def count_tweets(tweet_datafile):
     
     tweets = []
 
-    with open("../data" + os.sep + tweet_datafile, 'r+', encoding='utf-8-sig') as datafile:
+    with open('../data' + os.sep + tweet_datafile, 'r+', encoding='utf-8-sig') as datafile:
         for line in datafile.readlines():
             if not isLineEmpty(line):
                 data = json.dumps(line)
